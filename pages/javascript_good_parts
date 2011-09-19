@@ -1,0 +1,12 @@
+#title JavaScript: The Good Parts
+
+
+** Memoization
+
+** 函数化(Functional)继承模式　优于　伪类模式
+
+** JavaScript代码经常被直接发布
+
+** 不需要使用new
+
+** use JSON.parse, not eval

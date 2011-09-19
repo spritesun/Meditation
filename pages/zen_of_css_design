@@ -1,0 +1,122 @@
+#title CSS禅意花园
+#date 2011-05-04
+
+
+* 设计
+
+ - 简洁
+ - 统一，一致性
+ - 象征手法
+
+ - **光**
+  - 寻找光源，添加真实感
+  - 利用正空间、负空间相互定义
+
+ - **色**
+  - 用色彩表达信息
+  - 色彩对人类情绪的影响
+
+ - **对比度**
+  - 过高让作品拥挤，产生过度设计的感觉
+  - 过低带来压抑的感觉
+
+ - 引导视线
+
+* 布局
+
+ - 固定布局
+  - 对于图文混排情况，更容易控制
+ - 流式布局(fluid)
+  - 使用百分比控制宽度
+　- 避免空白
+  - 更加平衡
+  - 避免过于精确的比例关系
+ - 水平布局[1]
+  - 考虑固定定位(postion: fixed;)
+ - 弹性布局
+  - width, padding, margin等使用em，而不是px
+
+* CSS
+
+** 基础
+ - 带有语义的标记
+ - 避免过度使用div和span
+ - 尽可能少的使用标签
+
+** 技术
+
+ - 跳出网格的限制
+  - 相对定位，仍包含在文档流中
+  - 绝对定位，不会影响文档流
+
+ - 精确控制浮动元素
+  - 增大区域宽度
+  - 限制内容宽度
+  - 注意斜体
+  - 限制内容溢出(overflow)
+ 
+ - 用浮动代替绝对布局，解决垂直溢出
+
+ - Fahrner图像替换
+<src lang="css">
+html markup:
+<h1 id="pageHeader"><span>css Zen</span></h1>
+
+css:
+#pageHeader {
+  background: url(xxx.gif);
+}
+#pageHeader span {
+  display: none;
+}
+</src>
+
+
+ - 控制特殊性，去掉额外的css selector
+
+ - 黑色边框定位
+<src lang="css">
+#extraDiv2 {
+position: fixed;
+</src>
+
+ - 学会使用position fixed，让你的设计与众不同
+
+* 图像
+
+*** 透明度
+
+格式 || 透明度
+GIF  |  1位透明
+JPEG |  不支持透明
+PNG  |  1,8位透明
+
+ - 使用细条图像填充背景
+ - 圆角
+ - 二维平面表现三维意境
+ - 充分利用细节表现真实感
+
+* 字体排印(Typography)
+
+ - 高对比度字体
+
+ - 通用字体族
+  - serif: 有装饰钩(衬线)
+  - sans serif: 无装饰钩
+  - monospace: 等宽
+  - cursive: 手写
+  - fantasy: 装饰用
+
+ - 装饰性元素
+ - 注意人眼视觉行为
+
+* Tips
+ - [[http://www.mezzoblue.com/css/cribsheet/][Css Crib Sheet]]
+ - 在最高级、最先进的浏览器中进行CSS开发，然后再考虑其他浏览器
+ - 浏览器的舍入误差有时会让 50% + 50% = 100.1%
+ - 指定图片路径时不要使用单引号。(不加引号和双引号都可以)
+
+
+Footnotes:
+
+[1]　本书中我认为最为有创意的设计

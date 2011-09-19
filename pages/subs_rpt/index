@@ -1,0 +1,92 @@
+#title Subscription Reporting Cookbooks
+
+* Address Book
+** People
+** Environment
+
+* Environment
+** Cloud/Gandalf
+** QA
+** Staging
+** Production
+
+* Database
+** DataWarehouse
+** PSeeker
+
+* Integration
+** AD1
+
+* Release
+** Tag
+
+* YellowFin
+
+
+------
+
+* 环境
+
+** cloud
+
+Getting started - https://community.rea-group.com/docs/DOC-13356
+
+Intro to chef - https://community.rea-group.com/docs/DOC-14369
+
+Home page - https://community.rea-group.com/community/functions/it/siteops/site/opsprojects/projects/gandalf 
+
+** pseeker
+ - user: root
+ - password: s3cr3t
+
+** qa
+** staging
+** production
+
+** datawarehouse
+ - test
+  - jdbc:jtds:sqlserver://10.100.4.7:1433/READataWarehouse;appName=YellowFin Reporting;
+  - yf_agentreporting
+  - r3p0rt$
+
+** New Relic
+
+https://rpm.newrelic.com/accounts/13011/applications/338721
+
+sun.long@rea-group.com
+Melbourne05
+
+
+
+* 人员
+
+* Fix QA Issue
+ - 本地重现问题
+  - customer-platform/cp-reporting/cp-agentadmin: checkout tag 
+  - db-migration: checkout tag
+  - be rake dbm:prepare && be rake dbm:migrate:all
+  - 启动rails服务器
+  - 重现问题
+
+* Restore Cloud Pseeker
+ - rea-env configure pseekeretaldb pseekeretaldb
+ - (manually): create missing table, clear redundant data
+ - (manually): run readb sql
+ - be rake db_migrations
+ - insert twc user
+<src lang='sql'>
+INSERT INTO `LoginAccount` (`UserID`, `AgentID`, `Password`, `DateEntered`, `Category`, `Mod`, `MessagesViewed`, `Name`, `NumberOfFailedLogins`, `LastFailedLoginTime`, `EncryptionType`)
+VALUES
+     ('twc', 'XNWTRD', '5f4dcc3b5aa765d61d8327deb882cf99', 1311554836, 'SuperUser', 1311823498, '', 'ThoughtWorks China Test Account', 0, NULL, 'MD5');
+</src>
+ - manually check
+
+* How to create an empty node in Cloud
+
+https://community.rea-group.com/docs/DOC-14641
+
+** Ops
+
+- MSN, karel.malbroukou@rea-group.com
+
+- IRC, ops01.int.realestate.com.au

@@ -1,0 +1,20 @@
+#title Common Lisp: The Language
+
+X3J13, the type function is to be disjoint from cons and symbol, and so a list whose car is lambda is not, properly speaking, of type function, nor is any symbol.
+
+<src lang='lisp'>
+(mapcar '(lambda (x y) (sqrt (* x y))) p q)
+</src>
+but instead one must write something like,
+<src lang='lisp'>
+(mapcar #'(lambda (x y) (sqrt (* x y))) p q)
+</src>
+
+The change makes it impermissible to represent a lexical closure as a list whose car is some special marker.
+
+
+** 使用funcall
+
+** lisp程序运行的先后顺序就是：先执行所有的宏，然后编译执行代码。 
+
+** defclass 面向对象
