@@ -1,3 +1,6 @@
 Meditation is a personal practise.
 
+** Notes
+ - when create new subdirectory in pages, need to reset muse-project-alist and reload the file
+ 
 Powered by Emacs Muse
