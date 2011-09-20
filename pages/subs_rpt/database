@@ -1,0 +1,19 @@
+#title Database
+
+* DataWarehouse
+
+	DW (test) connection string: 	jdbc:jtds:sqlserver://10.100.4.7:1433/READataWarehouse;appName=YellowFin  Reporting;defaultTransactionIsolation=
+		userid: yf_agentreporting
+		password:	 r3p0rt$
+	DW(prod) connection string: 	jdbc:jtds:sqlserver://10.100.91.20:1433/READataWarehouse;appName=YellowFin Reporting;defaultTransactionIsolation=
+		userid: yf_agentreporting
+		password: r3p0rt$
+	DW(staging) : 172.24.54.249
+
+ - test
+  - jdbc:jtds:sqlserver://10.100.4.7:1433/READataWarehouse;appName=YellowFin Reporting;
+  - yf_agentreporting
+  - r3p0rt$
+
+
+* PSeeker

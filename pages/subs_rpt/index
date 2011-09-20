@@ -1,16 +1,17 @@
 #title Subscription Reporting Cookbooks
 
-* Address Book
-** People
-** Environment
+* People Address Book
 
-* Environment
+* [[environment][Environment]]
+** CI
 ** Cloud/Gandalf
 ** QA
 ** Staging
 ** Production
+** New Relic
 
-* Database
+
+* [[database][Database]]
 ** DataWarehouse
 ** PSeeker
 
@@ -25,48 +26,6 @@
 
 ------
 
-* 环境
-
-** cloud
-
-Getting started - https://community.rea-group.com/docs/DOC-13356
-
-Intro to chef - https://community.rea-group.com/docs/DOC-14369
-
-Home page - https://community.rea-group.com/community/functions/it/siteops/site/opsprojects/projects/gandalf 
-
-** pseeker
- - user: root
- - password: s3cr3t
-
-** qa
-** staging
-** production
-
-** datawarehouse
- - test
-  - jdbc:jtds:sqlserver://10.100.4.7:1433/READataWarehouse;appName=YellowFin Reporting;
-  - yf_agentreporting
-  - r3p0rt$
-
-** New Relic
-
-https://rpm.newrelic.com/accounts/13011/applications/338721
-
-sun.long@rea-group.com
-Melbourne05
-
-
-
-* 人员
-
-* Fix QA Issue
- - 本地重现问题
-  - customer-platform/cp-reporting/cp-agentadmin: checkout tag 
-  - db-migration: checkout tag
-  - be rake dbm:prepare && be rake dbm:migrate:all
-  - 启动rails服务器
-  - 重现问题
 
 * Restore Cloud Pseeker
  - rea-env configure pseekeretaldb pseekeretaldb

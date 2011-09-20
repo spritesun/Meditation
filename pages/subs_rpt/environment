@@ -1,0 +1,82 @@
+#title Environment
+
+* Code Base
+
+ - db-migrations: ad-dev01.dev.int:/web/repos/db-migrations.git
+ - jetwire: ad-dev01.dev.int:/web/repos/jetwire.git
+ - readb: ad-dev01.dev.int:/web/repos/readb.git
+ - cp-reporting: git@git.realestate.com.au:customer-systems/cp-reporting.git
+
+ad-dev01.dev.int(10.112.120.49)
+
+* CI
+ - subs reporting: http://ci.cp.vpc.realestate.com.au:8080/view/subs-reporting/
+
+
+
+* Cloud/Gandalf 
+http://agentdesktop.cp-subs-reporting.vpc.realestate.com.au/cgi-bin/entry
+
+login: twc/password
+
+** pseeker
+<src lang="bash">
+mysql -uroot -ps3cr3t PSeeker
+</src>
+
+** Documents
+ - How to setup E2E env - https://community.rea-group.com/docs/DOC-13356
+ - Use rea-env to create/destroy node - https://community.rea-group.com/docs/DOC-14641
+ - Videos Intro to using chef at REA - https://community.rea-group.com/docs/DOC-14369
+ - Home page - https://community.rea-group.com/community/functions/it/siteops/site/opsprojects/projects/gandalf
+
+
+* Labs(Abandoned)
+http://agentdesktop.labs.int.realestate.com.au
+
+** rails app server
+<src lang="bash">
+ssh wluo@rapp-lab01.dev.int
+# wluo@rapp-lab01.dev.int's password: wluo
+</src>
+rapp-lab01.dev.int(10.112.120.84)
+
+** pseeker
+pseeker-lab01.dev.int(10.112.120.78)
+
+* QA
+https://agentdesktop.qa.int.realestate.com.au
+
+login: lsun/password
+
+** rails app server
+<src lang="bash">
+ssh wluo@rapp-qa01.dev.int
+# wluo@rapp-qa01.dev.int's password: wluo
+</src>
+rapp-lab01.dev.int(10.112.120.104)
+
+** How we always fix defect in QA env
+  - 本地重现问题
+  - customer-platform/cp-reporting/cp-agentadmin: checkout tag 
+  - db-migration: checkout tag
+  - be rake dbm:prepare && be rake dbm:migrate:all
+  - 启动rails服务器
+  - 重现问题
+
+
+* Staging
+https://staging.agentdesktop.realestate.com.au
+
+login: lsun/password
+
+
+* Production
+https://agentdesktop.realestate.com.au
+
+login: jpeng/********
+
+* New Relic
+https://rpm.newrelic.com/accounts/13011/applications/338721
+
+login: sun.long@rea-group.com/Melbourne05
